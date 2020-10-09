@@ -65,17 +65,20 @@ do
 		\r
 		\r1.create user
 		\r2.delete user
-		\r3.exit
 		\r
-		\rPlease, choose option [1/2/3]: "
+		\rPlease, choose option [1/2], any other key to exit: "
 
 	read mainOption
 	
-	if [ $mainOption = 1 ]; then
-		createUser
-	elif [ $mainOption = 2 ]; then
-		delUser
-	elif [ $mainOption = 3 ]; then
-		break
-	fi
+	case $mainOption in
+		1)
+			createUser
+			;;
+		2)
+			delUser
+			;;
+		*)
+			break
+			;;
+	esac
 done
